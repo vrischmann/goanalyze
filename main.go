@@ -1,8 +1,9 @@
 package main
 
 import (
-	"golang.org/x/tools/go/analysis"
 	"go.rischmann.fr/goanalyze/promhistogram"
+	"golang.org/x/tools/go/analysis"
+	"golang.org/x/tools/go/analysis/multichecker"
 )
 
 func main() {
@@ -10,5 +11,5 @@ func main() {
 		promhistogram.Analyzer,
 	}
 
-	multichecker.Main(analyzers)
+	multichecker.Main(analyzers...)
 }
